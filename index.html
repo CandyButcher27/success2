@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+  <style>
+    /* Set body and html to take full height */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .success{
+      color:green;
+    }
+
+    /* Make the image cover the entire screen */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full height of the viewport */
+      background-image: url('failure.png');
+      background-size: cover;
+      background-position: center;
+      display: none; /* Hide image container initially */
+    }
+
+    /* Style for the text */
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the text */
+      color: white; /* White text color */
+      font-size: 3rem;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Responsive font size for smaller screens */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem; /* Smaller text on mobile */
+      }
+    }
+  </style>
+  <script>
+    // JavaScript for passcode prompt
+    document.addEventListener('DOMContentLoaded', function() {
+      const passcode = "1370"; // Set your desired passcode here
+      const userPasscode = prompt("Enter passcode to view the page:");
+
+      if (userPasscode === passcode) {
+        document.querySelector('.image-container').style.display = "block"; // Show content if passcode is correct
+      } else {
+        alert("Incorrect passcode.");
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="image-container">
+    <h1>Find me where the spaceship is made, Space Escape is where the flash drive is laid</h1>
+  </div>
+</body>
+</html>
